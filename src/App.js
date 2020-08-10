@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Toggler from "./Toggler";
+import SimpleFormHooks from "./SimpleFormHooks";
+import SimpleFormInputHook from "./SimpleFormInputHook";
+import UseEffect from "./UseEffect";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>The Count is: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Add 1</button>
+      <Toggler />
+      <SimpleFormHooks />
+      <SimpleFormInputHook />
+      <UseEffect />
     </div>
   );
 }
